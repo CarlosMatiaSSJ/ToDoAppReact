@@ -3,24 +3,21 @@ import {CompleteIcon} from './CompleteIcon'
 import {DeleteIcon} from './DeleteIcon'
 
 import "./TodoItem.css";
+import"./TodoIcon.css";
 
 function TodoItem(props) {
   return (
     <li className="TodoItem">
-      < CompleteIcon />
-      {/* <img
-        className={`Icon Icon-check  ${
-          props.completed && "Icon-check--active"
-        }`}
-        onClick={props.onComplete}
-        src="./icons/cheque.png"
-      ></img> */}
+      < CompleteIcon 
+      completed = {props.completed}
+      onComplete = {props.onComplete}/>
+      
       <p className={`TodoItem-p ${props.completed && "TodoItem-p--completed"}`}>
         {" "}
         {props.text}
       </p>
-      < DeleteIcon />
-      {/* <span onClick={props.onDelete} className="Icon Icon-delete">X</span> */}
+      < DeleteIcon 
+      onDelete={props.onDelete}/>
     </li>
   );
 }
